@@ -8,7 +8,9 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <div className={styles.logo}>
         <Image src="/images/pokeball.png" width="30" height="30" alt="PokeNext" />
-        <h1>PokeNext</h1>
+        <Link href="/">
+          <a><h1>PokeNext</h1></a>
+        </Link>        
       </div>
       <ul className={styles.links_items}>
         <li>

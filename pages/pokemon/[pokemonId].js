@@ -2,6 +2,8 @@ import styles from "../../styles/Pokemon.module.css";
 
 import Image from "next/image";
 
+import { useRouter } from "next/router";
+
 export const getStaticPaths = async() => {    // Faz o mapeamnto geral
   const maxPokemons = 251;
   const api = "https://pokeapi.co/api/v2/pokemon/";
@@ -18,7 +20,7 @@ export const getStaticPaths = async() => {    // Faz o mapeamnto geral
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -34,6 +36,14 @@ export const getStaticProps = async(context) => {   // Faz o mapeamento individu
 }
 
 export default function Pokemon({pokemon}) {
+  const router = useRouter()
+
+  if(router.isFallback) {
+    return (
+      <div className={styles.loading}>Carregando...</div>
+    )
+  }
+ 
   return (
     <div className={styles.pokemon_container}>
       <h1 className={styles.title}>{pokemon.name}</h1>

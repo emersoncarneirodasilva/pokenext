@@ -12,6 +12,19 @@
   color: #fff;
 }
 
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 2.5em;
+  padding: 0.5em;
+  margin: auto;
+  max-width: 300px;
+  background-color: #333;
+  color: #fff;
+}
+
 .pokemon_container h3 {
   margin: 0.6em auto;
   font-size: 1.2em;
